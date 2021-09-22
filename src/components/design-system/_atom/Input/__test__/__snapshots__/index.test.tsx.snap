@@ -2,45 +2,34 @@
 
 exports[`Input component renering and behavior should render <Input/> correctly 1`] = `
 <div
-  className="css-1in2ro"
+  className="css-1jxo5rv"
 >
-  <div
-    className="css-wtunex"
+  <label
+    className="css-savvye"
   >
-    <span
-      className="css-1eocg7u"
-    >
-      Text Input
-    </span>
-  </div>
+    Text Input
+  </label>
   <input
-    className="css-uwfclv"
+    className="css-37u041"
     placeholder="write something"
+    type="text"
   />
 </div>
 `;
 
 exports[`Input component renering and behavior should render <Input/> with error 1`] = `
 <div
-  className="css-1in2ro"
+  className="css-1jxo5rv"
 >
-  <div
-    className="css-wtunex"
+  <label
+    className="css-savvye"
   >
-    <span
-      className="css-g88gqx"
-    >
-      Text Input Error
-    </span>
-    <span
-      className="css-1vtdroj"
-    >
-      error
-    </span>
-  </div>
+    Text Input Error
+  </label>
   <input
-    className="css-1eei7dp"
+    className="css-37u041"
     placeholder="write something"
+    type="text"
   />
 </div>
 `;

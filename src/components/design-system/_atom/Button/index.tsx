@@ -13,7 +13,7 @@ export interface Props {
    */
   buttonType: ButtonTypes;
   /**
-   *  button type "clear" | "primary" | "secondary"
+   *  onClick handler
    */
   onClickHandler: () => void;
 }

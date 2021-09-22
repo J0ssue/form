@@ -7,6 +7,7 @@ import globalStyles from "./components/design-system/_static/GlobalStyles";
 
 // Todo: remove components once there is no need for them
 import Button from "./components/design-system/_atom/Button";
+import Input from "./components/design-system/_atom/Input";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <Global styles={globalStyles} />
       <Suspense fallback={<PageLoader />}>
         <Button onClickHandler={() => console.log("here")} label="button" />
-        Mosano app
+        <Input placeholder="name here" type="date" />
       </Suspense>
     </div>
   );

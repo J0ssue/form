@@ -4,35 +4,26 @@ import {
   InputContainer,
   InputComponent,
   InputLabel,
-  InputTextContainer,
-  InputError,
 } from "./styled-components";
 
 interface Props {
   type: string;
   label: string;
   placeholder: string;
-  error?: {
-    message?: string;
-  };
+  hasError: boolean;
   onChange?: () => void;
 }
 
 const Input = (props: Props) => {
-  const { error, label, placeholder, onChange } = props;
-  const hasError = () => error && error.message;
+  const { type, hasError, label, placeholder, onChange } = props;
   return (
     <InputContainer>
-      <InputTextContainer>
-        <InputLabel hasError={hasError}>{label}</InputLabel>
-        {error && (
-          <InputError>{error.message && get(error, "message")}</InputError>
-        )}
-      </InputTextContainer>
+      <InputLabel hasError={hasError}>{label}</InputLabel>
       <InputComponent
+        type={type}
         onChange={onChange}
         placeholder={placeholder}
-        hasError={get(error, "message")}
+        hasError={hasError}
       ></InputComponent>
     </InputContainer>
   );
@@ -40,8 +31,9 @@ const Input = (props: Props) => {
 
 Input.defaultProps = {
   label: "input",
-  type: "string",
+  type: "text",
   placeholder: "string",
+  hasError: false,
 };
 
 export default Input;

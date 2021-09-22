@@ -6,54 +6,51 @@ export const InputContainer = styled.div`
   width: 309px;
   height: 48px;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-items: space-between;
 
   & * {
     box-sizing: border-box;
   }
 `;
 
-export const InputComponent = styled.input<{ hasError: undefined | string }>`
+export const InputComponent = styled.input<{ hasError: boolean }>`
   width: 100%;
   height: 100%;
   padding: 0 14px 0 14px;
-  border-radius: 8px;
-  border: 1.5px solid #cfcfcf;
-  caret-color: ${buildColor("red", "100")};
+  color: ${buildColor("blue", "400")};
+  border: 2px solid ${buildColor("blue", "400")};
+  caret-color: ${buildColor("blue", "400")};
   font-size: 14px;
   outline: none;
   transition: border 0.2s, outline 0.2s;
 
+  &::placeholder {
+    color: ${buildColor("blue", "400")};
+  }
+
+  &::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+
   &:focus {
-    border: 1px solid ${buildColor("red", "100")};
+    border: 2px solid ${buildColor("blue", "400")};
   }
 
   ${({ hasError }) =>
     hasError &&
     css`
-      border: 1.5px solid ${buildColor("red", "100")};
+      border: 2px solid ${buildColor("red", "100")};
       &:focus {
-        border: 1.5px solid ${buildColor("red", "100")};
+        border: 2px solid ${buildColor("red", "100")};
       }
     `}
 `;
 
-export const InputTextContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: absolute;
-  top: -19px;
-  left: 0px;
-`;
-
-export const InputLabel = styled.span<{ hasError: Function }>`
-  font-size: 12px;
+export const InputLabel = styled.label<{ hasError: boolean }>`
+  font-size: 14px;
+  text-transform: capitalize;
   color: ${({ hasError }) =>
-    hasError() ? buildColor("red", "100") : buildColor("black", "900")};
-`;
-
-export const InputError = styled.span`
-  text-align: right;
-  font-size: 12px;
-  color: ${buildColor("red", "100")};
+    hasError ? buildColor("red", "100") : buildColor("blue", "400")};
 `;
