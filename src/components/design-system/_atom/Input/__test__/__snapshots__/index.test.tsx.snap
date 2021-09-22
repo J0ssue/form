@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component renering and behavior should render <Input/> correctly 1`] = `
+<div
+  className="css-1in2ro"
+>
+  <div
+    className="css-wtunex"
+  >
+    <span
+      className="css-1eocg7u"
+    >
+      Text Input
+    </span>
+  </div>
+  <input
+    className="css-uwfclv"
+    placeholder="write something"
+  />
+</div>
+`;
+
+exports[`Input component renering and behavior should render <Input/> with error 1`] = `
+<div
+  className="css-1in2ro"
+>
+  <div
+    className="css-wtunex"
+  >
+    <span
+      className="css-g88gqx"
+    >
+      Text Input Error
+    </span>
+    <span
+      className="css-1vtdroj"
+    >
+      error
+    </span>
+  </div>
+  <input
+    className="css-1eei7dp"
+    placeholder="write something"
+  />
+</div>
+`;

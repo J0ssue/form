@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Text/> rendering should render correctly 1`] = `
+<p
+  className="css-fp2tty"
+  color="#000000"
+  size={12}
+  transform="none"
+>
+  hello world
+</p>
+`;
