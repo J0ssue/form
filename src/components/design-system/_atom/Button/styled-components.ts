@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
-//@ts-ignore
 import { buildColor } from "components/design-system/_static/colorPalette";
 
 export const ButtonContainer = styled.button<{ buttonType: string }>`
@@ -16,40 +15,15 @@ export const ButtonContainer = styled.button<{ buttonType: string }>`
   background-color: transparent;
 
   ${({ buttonType }) =>
-    buttonType === "primary" &&
+    buttonType === "clear" &&
     css`
-      color: ${buildColor("white", "900")};
-      background-color: ${buildColor("red", "100")};
-      &:hover {
-        background-color: ${buildColor("red", "000")};
-      }
-    `}
-
-  ${({ buttonType }) =>
-    buttonType === "secondary" &&
-    css`
-      color: ${buildColor("black", "900")};
-      border: 2px solid ${buildColor("black", "900")};
-      background-color: ${buildColor("white", "900")};
+      color: ${buildColor("blue", "400")};
+      border: 2px solid ${buildColor("blue", "400")};
+      width: 160px;
+      height: 48px;
       &:hover {
         color: ${buildColor("white", "900")};
-        background-color: ${buildColor("black", "900")};
+        background-color: ${buildColor("blue", "400")};
       }
     `}
-
-  ${({ buttonType }) =>
-    buttonType !== "clear"
-      ? css`
-          width: 160px;
-          height: 48px;
-        `
-      : css`
-          &:hover {
-            color: ${buildColor("red", "100")};
-          }
-        `}
-
-  svg {
-    margin-left: 13px;
-  }
 `;
