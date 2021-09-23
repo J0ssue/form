@@ -1,11 +1,6 @@
 import React from "react";
 
-import {
-  InputContainer,
-  Select,
-  SelectLabel,
-  SelectButton,
-} from "./styled-components";
+import { InputContainer, Select, SelectButton } from "./styled-components";
 
 interface Props {
   /**
@@ -51,12 +46,12 @@ const SelectInput = (props: Props) => {
   };
 
   return (
-    <InputContainer>
+    <InputContainer className="input-container">
       {label}
-      <SelectLabel onChange={onChangeHandler}>
-        <Select>{options && renderOptions(options)}</Select>
-        <SelectButton>▼</SelectButton>
-      </SelectLabel>
+      <Select onChange={onChangeHandler}>
+        {options && renderOptions(options)}
+      </Select>
+      <SelectButton>▼</SelectButton>
     </InputContainer>
   );
 };

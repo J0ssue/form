@@ -8,24 +8,8 @@ Object {
       <div
         class="App"
       >
-        <button
-          class="css-fx8zlh"
-        >
-          button
-        </button>
-        <div
-          class="css-1jxo5rv"
-        >
-          <label
-            class="css-savvye"
-          >
-            input
-          </label>
-          <input
-            class="css-37u041"
-            placeholder="name here"
-            type="date"
-          />
+        <div>
+          Loading...
         </div>
       </div>
     </div>
@@ -34,24 +18,8 @@ Object {
     <div
       class="App"
     >
-      <button
-        class="css-fx8zlh"
-      >
-        button
-      </button>
-      <div
-        class="css-1jxo5rv"
-      >
-        <label
-          class="css-savvye"
-        >
-          input
-        </label>
-        <input
-          class="css-37u041"
-          placeholder="name here"
-          type="date"
-        />
+      <div>
+        Loading...
       </div>
     </div>
   </div>,

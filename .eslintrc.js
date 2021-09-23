@@ -7,5 +7,7 @@ module.exports = {
   rules: {
     "@typescript-eslint/no-var-requires": 0,
     "@typescript-eslint/explicit-module-boundary-types": ["off"],
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
   },
 };

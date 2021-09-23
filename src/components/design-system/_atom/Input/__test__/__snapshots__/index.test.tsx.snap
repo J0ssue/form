@@ -2,7 +2,7 @@
 
 exports[`Input component renering and behavior should render <Input/> correctly 1`] = `
 <div
-  className="css-1jxo5rv"
+  className="input-container css-1jxo5rv"
 >
   <label
     className="css-savvye"
@@ -19,7 +19,7 @@ exports[`Input component renering and behavior should render <Input/> correctly 
 
 exports[`Input component renering and behavior should render <Input/> with error 1`] = `
 <div
-  className="css-1jxo5rv"
+  className="input-container css-1jxo5rv"
 >
   <label
     className="css-savvye"

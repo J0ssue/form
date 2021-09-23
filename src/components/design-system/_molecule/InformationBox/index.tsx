@@ -1,25 +1,21 @@
 import React from "react";
 import { Entry } from "app/schemas/types";
-import { Table, TableHead, TableData, Caption } from "./styled-components";
+import { Table, TableHead, TableData } from "./styled-components";
 
 interface Props {
   /**
    * Adds entries
    * */
   entries?: Entry[];
-  /**
-   * Adds entries
-   * */
-  caption?: string;
 }
 
 const InformationBox = (props: Props) => {
-  const { entries, caption } = props;
+  const { entries } = props;
 
   const renderEntries = () =>
     entries &&
     entries.map((entry) => (
-      <tr>
+      <tr key={entry.name}>
         <TableData>{entry.name}</TableData>
         <TableData>{entry.country}</TableData>
         <TableData>{entry.birthdate}</TableData>
@@ -34,7 +30,6 @@ const InformationBox = (props: Props) => {
         <TableHead>birthday</TableHead>
       </tr>
       {entries && renderEntries()}
-      <Caption>{caption || ""}</Caption>
     </Table>
   );
 };

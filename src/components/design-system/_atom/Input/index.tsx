@@ -16,7 +16,7 @@ interface Props {
 const Input = (props: Props) => {
   const { type, hasError, label, placeholder, onChange } = props;
   return (
-    <InputContainer>
+    <InputContainer className="input-container">
       <InputLabel hasError={hasError}>{label}</InputLabel>
       <InputComponent
         type={type}

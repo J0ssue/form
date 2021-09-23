@@ -10,3 +10,11 @@ export type Entry = {
   country: string;
   birthdate: string;
 };
+
+export type FormSchema = {
+  inputs: Input[];
+  button: string;
+  successMessage: string;
+  errorMessage: string;
+  caption: string;
+};

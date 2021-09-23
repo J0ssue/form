@@ -9,17 +9,12 @@ export const InputContainer = styled.div`
   justify-items: space-between;
   color: ${buildColor("blue", "400")};
   font-size: 14px;
+  display: flex;
+  position: relative;
 
   & * {
     box-sizing: border-box;
   }
-`;
-
-export const SelectLabel = styled.label`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  position: relative;
 `;
 
 export const Select = styled.select`
@@ -30,6 +25,7 @@ export const Select = styled.select`
   caret-color: ${buildColor("blue", "400")};
   font-size: 14px;
   outline: none;
+  padding-left: 14px;
   transition: border 0.2s, outline 0.2s;
   -moz-appearance: none; /* Firefox */
   -webkit-appearance: none; /* Safari and Chrome */

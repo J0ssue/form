@@ -1,11 +1,6 @@
-import { Input } from "./types";
+import { FormSchema } from "./types";
 
-const formSchema: {
-  inputs: Input[];
-  button: string;
-  successMessage: string;
-  errorMessage: string;
-} = {
+const formSchema: FormSchema = {
   inputs: [
     {
       id: "name",
@@ -20,22 +15,23 @@ const formSchema: {
       placeholder: "name here",
     },
     {
-      id: "surname",
-      type: "text",
-      label: "Surname",
-      placeholder: "name here",
-    },
-    {
       id: "countries",
       type: "select",
       label: "Countries",
       placeholder: "Countries",
+    },
+    {
+      id: "birthday",
+      type: "date",
+      label: "birthday",
+      placeholder: "mm/dd/yyyy",
     },
   ],
   button: "Save",
   successMessage:
     "Hello {name} from {country}. on {day} of {month} you will have {years}",
   errorMessage: "Please fill in the inputs in red",
+  caption: "Your Name and LastName",
 };
 
 export default formSchema;
