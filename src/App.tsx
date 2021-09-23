@@ -8,6 +8,7 @@ import globalStyles from "./components/design-system/_static/GlobalStyles";
 // Todo: remove components once there is no need for them
 import Button from "./components/design-system/_atom/Button";
 import Input from "./components/design-system/_atom/Input";
+import SelectInput from "./components/design-system/_atom/SelectInput";
 
 function App() {
   return (
@@ -16,6 +17,10 @@ function App() {
       <Suspense fallback={<PageLoader />}>
         <Button onClickHandler={() => console.log("here")} label="button" />
         <Input placeholder="name here" type="date" />
+        <SelectInput
+          options={["portugal", "mexico"]}
+          onChangeHandler={() => console.log("here")}
+        />
       </Suspense>
     </div>
   );
