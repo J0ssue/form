@@ -27,7 +27,7 @@ const SelectInput = (props: Props) => {
   const renderOptions = (items: string[]) => {
     if (placeholder) {
       return [
-        <option selected disabled hidden>
+        <option key={placeholder} disabled hidden>
           {placeholder}
         </option>,
         ...items.map((item) => (
@@ -48,7 +48,7 @@ const SelectInput = (props: Props) => {
   return (
     <InputContainer className="input-container">
       {label}
-      <Select onChange={onChangeHandler}>
+      <Select defaultValue={placeholder} onChange={onChangeHandler}>
         {options && renderOptions(options)}
       </Select>
       <SelectButton>▼</SelectButton>

@@ -24,12 +24,14 @@ const InformationBox = (props: Props) => {
 
   return (
     <Table>
-      <tr>
-        <TableHead>name</TableHead>
-        <TableHead>country</TableHead>
-        <TableHead>birthday</TableHead>
-      </tr>
-      {entries && renderEntries()}
+      <thead>
+        <tr>
+          <TableHead>name</TableHead>
+          <TableHead>country</TableHead>
+          <TableHead>birthday</TableHead>
+        </tr>
+      </thead>
+      <tbody>{entries && renderEntries()}</tbody>
     </Table>
   );
 };
