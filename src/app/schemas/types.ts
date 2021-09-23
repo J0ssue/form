@@ -4,3 +4,9 @@ export type Input = {
   label: string;
   placeholder: string;
 };
+
+export type Entry = {
+  name: string;
+  country: string;
+  birthdate: string;
+};
