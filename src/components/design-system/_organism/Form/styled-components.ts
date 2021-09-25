@@ -12,7 +12,7 @@ export const FormContainer = styled.div`
 `;
 
 export const FormEl = styled.form`
-  flex-basis: calc(50% - 20px);
+  flex-basis: 100%;
   margin-bottom: 30px;
   .input-container {
     width: 100%;
@@ -27,11 +27,19 @@ export const FormEl = styled.form`
   button {
     margin: 50px 0px 30px auto;
   }
+
+  @media (min-width: 768px) {
+    flex-basis: calc(50% - 20px);
+  }
 `;
 
 export const TableContainer = styled.div`
   border: 2px solid ${buildColor("blue", "400")};
-  flex-basis: calc(50% - 20px);
+  flex-basis: 100%;
+
+  @media (min-width: 768px) {
+    flex-basis: calc(50% - 20px);
+  }
 `;
 
 export const Caption = styled.p`

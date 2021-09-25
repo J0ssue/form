@@ -28,7 +28,7 @@ interface Props {
   /**
    * Sets input error
    */
-  error?: Partial<Record<string, string>>;
+  error?: string;
 }
 
 const SelectInput = (props: Props) => {

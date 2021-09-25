@@ -13,7 +13,7 @@ interface Props {
     e: React.ChangeEvent<HTMLInputElement & HTMLSelectElement>
   ) => void;
   value?: string;
-  error?: Partial<Record<never, string>>;
+  error?: string;
 }
 
 const Input = (props: Props) => {
