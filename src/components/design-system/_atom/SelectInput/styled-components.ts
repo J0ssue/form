@@ -1,7 +1,8 @@
 import styled from "@emotion/styled";
+import { css } from "@emotion/react";
 import buildColor from "components/design-system/_static/colorPalette";
 
-export const InputContainer = styled.div`
+export const InputContainer = styled.div<{ hasError: boolean }>`
   width: 309px;
   height: 48px;
   display: flex;
@@ -12,12 +13,18 @@ export const InputContainer = styled.div`
   display: flex;
   position: relative;
 
+  ${({ hasError }) =>
+    hasError &&
+    css`
+      color: ${buildColor("red", "100")};
+    `}
+
   & * {
     box-sizing: border-box;
   }
 `;
 
-export const Select = styled.select`
+export const Select = styled.select<{ hasError: boolean }>`
   width: 100%;
   height: 100%;
   color: ${buildColor("blue", "400")};
@@ -30,9 +37,14 @@ export const Select = styled.select`
   -moz-appearance: none; /* Firefox */
   -webkit-appearance: none; /* Safari and Chrome */
   appearance: none;
+  ${({ hasError }) =>
+    hasError &&
+    css`
+      border: 2px solid ${buildColor("red", "100")};
+    `}
 `;
 
-export const SelectButton = styled.div`
+export const SelectButton = styled.div<{ hasError: boolean }>`
   height: 100%;
   width: 48px;
   cursor: pointer;
@@ -45,4 +57,9 @@ export const SelectButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  ${({ hasError }) =>
+    hasError &&
+    css`
+      border: 2px solid ${buildColor("red", "100")};
+    `}
 `;

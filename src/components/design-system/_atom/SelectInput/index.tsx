@@ -18,11 +18,21 @@ interface Props {
   /**
    * Handles select change
    */
-  onChangeHandler?: (() => any) | undefined;
+  onChangeHandler: (
+    e: React.ChangeEvent<HTMLInputElement & HTMLSelectElement>
+  ) => void;
+  /**
+   * Sets input value
+   */
+  value?: any;
+  /**
+   * Sets input error
+   */
+  error?: Partial<Record<string, string>>;
 }
 
 const SelectInput = (props: Props) => {
-  const { options, label, placeholder, onChangeHandler } = props;
+  const { options, label, placeholder, onChangeHandler, error } = props;
 
   const renderOptions = (items: string[]) => {
     if (placeholder) {
@@ -46,12 +56,16 @@ const SelectInput = (props: Props) => {
   };
 
   return (
-    <InputContainer className="input-container">
-      {label}
-      <Select defaultValue={placeholder} onChange={onChangeHandler}>
+    <InputContainer className="input-container" hasError={!!error}>
+      <label>{label}</label>
+      <Select
+        defaultValue={placeholder}
+        onChange={onChangeHandler}
+        hasError={!!error}
+      >
         {options && renderOptions(options)}
       </Select>
-      <SelectButton>▼</SelectButton>
+      <SelectButton hasError={!!error}>▼</SelectButton>
     </InputContainer>
   );
 };

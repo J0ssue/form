@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 import {
   InputContainer,
   InputComponent,
@@ -9,20 +9,24 @@ interface Props {
   type: string;
   label: string;
   placeholder: string;
-  hasError: boolean;
-  onChange?: () => void;
+  onChangeHandler: (
+    e: React.ChangeEvent<HTMLInputElement & HTMLSelectElement>
+  ) => void;
+  value?: string;
+  error?: Partial<Record<never, string>>;
 }
 
 const Input = (props: Props) => {
-  const { type, hasError, label, placeholder, onChange } = props;
+  const { type, label, placeholder, onChangeHandler, value, error } = props;
   return (
     <InputContainer className="input-container">
-      <InputLabel hasError={hasError}>{label}</InputLabel>
+      <InputLabel hasError={!!error}>{label}</InputLabel>
       <InputComponent
         type={type}
-        onChange={onChange}
+        value={value}
         placeholder={placeholder}
-        hasError={hasError}
+        hasError={!!error}
+        onChange={onChangeHandler}
       ></InputComponent>
     </InputContainer>
   );

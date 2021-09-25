@@ -9,6 +9,7 @@ export const InputContainer = styled.div`
   display: flex;
   align-items: center;
   justify-items: space-between;
+  flex-wrap: wrap;
 
   & * {
     box-sizing: border-box;
@@ -28,10 +29,6 @@ export const InputComponent = styled.input<{ hasError: boolean }>`
 
   &::placeholder {
     color: ${buildColor("blue", "400")};
-  }
-
-  &::-webkit-calendar-picker-indicator {
-    opacity: 0;
   }
 
   &:focus {

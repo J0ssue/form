@@ -9,12 +9,12 @@ export const Table = styled.table`
 export const TableHead = styled.th`
   text-align: left;
   padding: 12px 8px;
-  border-bottom: 2px solid ${buildColor("grey", "400")};
+  border-bottom: 2px solid ${buildColor("grey", "700")};
 `;
 
 export const TableData = styled.td`
   text-align: left;
   padding: 12px 8px;
-  color: ${buildColor("grey", "400")};
+  color: ${buildColor("grey", "700")};
   border-bottom: 1px solid ${buildColor("grey", "400")};
 `;

@@ -23,4 +23,8 @@ const MessageBox = (props: Props) => {
   );
 };
 
+MessageBox.defaultProps = {
+  message: "",
+};
+
 export default MessageBox;

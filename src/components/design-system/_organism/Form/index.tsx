@@ -1,6 +1,8 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
+import { isEmpty } from "lodash";
+import { useForm } from "app/api/useForm";
 
-import { FormSchema } from "app/schemas/types";
+import { FormSchema, Entry } from "app/schemas/types";
 
 import Button from "../../_atom/Button";
 import Input from "../../_atom/Input";
@@ -27,20 +29,41 @@ interface Props {
   /**
    * Handles form submission
    * */
-  onFormSubmit: () => any;
+  onFormSubmit: (data: { [x: string]: any }) => void;
   /**
-   * Display submit success message
+   * Handles entry click
    * */
-  onSubmitSuccess?: boolean;
+  entryClickHandler: (entry: Entry) => any;
   /**
-   * Display submit error message
+   * Success message
    * */
-  onSubmitError?: boolean;
+  successMessage?: string | null;
+  /**
+   * Sets initial values on form
+   * */
+  initialValues?: {};
+  /**
+   * User entries
+   * */
+  entries: Entry[];
 }
 
 const Form = (props: Props) => {
-  const { formSchema, options, onFormSubmit, onSubmitSuccess, onSubmitError } =
-    props;
+  const {
+    formSchema,
+    initialValues,
+    options,
+    onFormSubmit,
+    entries,
+    successMessage,
+    entryClickHandler,
+  } = props;
+
+  const { handleSubmit, handleChange, data, errors } = useForm({
+    validations: formSchema && formSchema.validations,
+    initialValues: initialValues,
+    onSubmit: (data) => onFormSubmit(data),
+  });
 
   const renderInputs = () =>
     formSchema &&
@@ -52,36 +75,53 @@ const Form = (props: Props) => {
             label={input.label}
             placeholder={input.placeholder}
             options={options}
+            onChangeHandler={(
+              e: ChangeEvent<HTMLInputElement & HTMLSelectElement>
+            ) => handleChange(input.id, e)}
+            // @ts-ignore
+            error={errors[input.id]}
           />
         );
       }
       return (
         <Input
-          type={input.type}
           key={input.id}
+          type={input.type}
           label={input.label}
           placeholder={input.placeholder}
+          onChangeHandler={(
+            e: ChangeEvent<HTMLInputElement & HTMLSelectElement>
+          ) => handleChange(input.id, e)}
+          // @ts-ignore
+          value={data[input.id]}
+          // @ts-ignore
+          error={errors[input.id]}
         />
       );
     });
 
   return (
     <FormContainer>
-      <FormEl>
+      <FormEl
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSubmit(e);
+        }}
+      >
         {renderInputs()}
-        <Button label={formSchema?.button} onClickHandler={onFormSubmit} />
-        {onSubmitSuccess && (
-          <MessageBox
-            message={formSchema?.successMessage || ""}
-            type="success"
-          />
+        <Button label={formSchema?.button} />
+        {!isEmpty(errors) && !successMessage && (
+          <MessageBox type="error" message={formSchema?.errorMessage} />
         )}
-        {onSubmitError && (
-          <MessageBox message={formSchema?.errorMessage || ""} type="error" />
+        {successMessage && (
+          <MessageBox type="success" message={successMessage} />
         )}
       </FormEl>
       <TableContainer>
-        <InformationBox />
+        <InformationBox
+          entries={entries}
+          entryClickHandler={entryClickHandler}
+        />
       </TableContainer>
       <Caption>{formSchema?.caption}</Caption>
     </FormContainer>

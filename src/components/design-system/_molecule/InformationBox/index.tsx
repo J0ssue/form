@@ -7,18 +7,22 @@ interface Props {
    * Adds entries
    * */
   entries?: Entry[];
+  /**
+   * Handles entry click
+   * */
+  entryClickHandler: (entry: Entry) => any;
 }
 
 const InformationBox = (props: Props) => {
-  const { entries } = props;
+  const { entries, entryClickHandler } = props;
 
   const renderEntries = () =>
     entries &&
     entries.map((entry) => (
-      <tr key={entry.name}>
+      <tr key={entry.name} onClick={() => entryClickHandler(entry)}>
         <TableData>{entry.name}</TableData>
         <TableData>{entry.country}</TableData>
-        <TableData>{entry.birthdate}</TableData>
+        <TableData>{entry.birthday}</TableData>
       </tr>
     ));
 

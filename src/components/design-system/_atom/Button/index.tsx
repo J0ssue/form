@@ -15,7 +15,7 @@ export interface Props {
   /**
    *  onClick handler
    */
-  onClickHandler: () => void;
+  onClickHandler?: () => void;
 }
 
 const Button = (props: Props) => {
