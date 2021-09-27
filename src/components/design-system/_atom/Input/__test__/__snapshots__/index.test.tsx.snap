@@ -2,7 +2,7 @@
 
 exports[`Input component renering and behavior should render <Input/> correctly 1`] = `
 <div
-  className="input-container css-1jxo5rv"
+  className="input-container css-7ya7e0"
 >
   <label
     className="css-savvye"
@@ -10,7 +10,7 @@ exports[`Input component renering and behavior should render <Input/> correctly 
     Text Input
   </label>
   <input
-    className="css-37u041"
+    className="css-1pqnz1a"
     placeholder="write something"
     type="text"
   />
@@ -19,15 +19,15 @@ exports[`Input component renering and behavior should render <Input/> correctly 
 
 exports[`Input component renering and behavior should render <Input/> with error 1`] = `
 <div
-  className="input-container css-1jxo5rv"
+  className="input-container css-7ya7e0"
 >
   <label
-    className="css-savvye"
+    className="css-uvk7o0"
   >
     Text Input Error
   </label>
   <input
-    className="css-37u041"
+    className="css-noagsx"
     placeholder="write something"
     type="text"
   />
